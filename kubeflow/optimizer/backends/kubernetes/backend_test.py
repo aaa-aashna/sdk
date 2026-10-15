@@ -1147,6 +1147,13 @@ def test_delete_job(optimizer_backend, test_case):
                     reason="Running",
                     event_time=datetime.datetime(2025, 6, 1, 10, 31, 0),
                 ),
+                Event(
+                    involved_object_kind=constants.TRIAL_KIND,
+                    involved_object_name="trial-without-first-timestamp",
+                    message="Trial event without first timestamp",
+                    reason="Running",
+                    event_time=datetime.datetime(2025, 6, 1, 10, 32, 0),
+                ),
             ],
         ),
         TestCase(
