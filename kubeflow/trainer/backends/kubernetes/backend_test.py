@@ -1843,6 +1843,13 @@ def test_delete_job(kubernetes_backend, test_case):
                     reason="Scheduled",
                     event_time=datetime.datetime(2025, 6, 1, 10, 31, 0),
                 ),
+                types.Event(
+                    involved_object_kind="Pod",
+                    involved_object_name="node-1-pod",
+                    message="Pod event without first timestamp",
+                    reason="Scheduled",
+                    event_time=datetime.datetime(2025, 6, 1, 10, 32, 0),
+                ),
             ],
         ),
         TestCase(
